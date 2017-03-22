@@ -1,0 +1,19 @@
+#Validate the input
+def validinput(meas):
+    while True:
+        meas = raw_input('Please enter a measure in KM')
+        try:
+            meas=float(meas)
+            if meas>=0: #check if the number is positive
+                return meas
+                break #we have a valid input
+            else:
+                print('Not a positive number! Try again.')
+        except: #user didn't enter a number
+            print('Invalid input! Try again.')
+            continue
+#Main program
+meas=2
+valmeas= validinput(meas)
+valmeas=valmeas*0.621 #convert km into miles
+print('The measure you entered converted to miles is: '),valmeas
